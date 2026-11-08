@@ -1,0 +1,16 @@
+# secrets — never commit (repo must be public for the hackathon)
+.env
+
+# python
+__pycache__/
+*.pyc
+
+# api venv + runtime artifacts
+.venv/
+.pipcache/
+api/runs/
+tests/**/.duo_venv/
+tests/**/sandbox_repo/
+
+# per-run logs from the API runtime/
+runtime/

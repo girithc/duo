@@ -1,0 +1,30 @@
+{
+  "test": "test-real.py",
+  "selected_families": [
+    2
+  ],
+  "pass2_batches": 1,
+  "input_tokens": 6859,
+  "curated_test_types": [
+    {
+      "family_id": 2,
+      "family": "Isolated Unit & Functional Logic Testing",
+      "leaf_id": "pytest-regression-bug-repro",
+      "definition": "Reproduce reported bug as failing test",
+      "severity": "high",
+      "tool": "pytest",
+      "confidence": 0.999135434627533,
+      "band": "high"
+    },
+    {
+      "family_id": 2,
+      "family": "Isolated Unit & Functional Logic Testing",
+      "leaf_id": "pytest-idempotency-repeat-check",
+      "definition": "Run operation twice asserting identical outcome",
+      "severity": "high",
+      "tool": "pytest",
+      "confidence": 0.5969433188438416,
+      "band": "very_low"
+    }
+  ]
+}

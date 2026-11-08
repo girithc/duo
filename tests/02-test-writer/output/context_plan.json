@@ -1,0 +1,376 @@
+{
+  "source_curated": "test-1.py_curated.json",
+  "source_contract": "test-1.py",
+  "subq_calls": 46,
+  "input_tokens": 15219,
+  "context_plan": {
+    "transaction-rollback-semantics": {
+      "test_type": "transaction-rollback-semantics",
+      "definition": "Verifies commit and rollback boundaries under nested transactions",
+      "severity": "critical",
+      "needs_context": true,
+      "confidence": 0.8947361707687378,
+      "band": "high"
+    },
+    "compound-update-atomicity": {
+      "test_type": "compound-update-atomicity",
+      "definition": "Multi-step shared-state updates commit fully or not at all",
+      "severity": "critical",
+      "needs_context": false,
+      "confidence": 0.5813912451267242,
+      "band": "very_low"
+    },
+    "pytest-happy-path-assertions": {
+      "test_type": "pytest-happy-path-assertions",
+      "definition": "Assert expected outputs for canonical valid inputs",
+      "severity": "critical",
+      "needs_context": false,
+      "confidence": 0.8883601725101471,
+      "band": "high"
+    },
+    "auth-bypass-red-team": {
+      "test_type": "auth-bypass-red-team",
+      "definition": "Every route enforces identity; no unauthenticated access",
+      "severity": "critical",
+      "needs_context": true,
+      "confidence": 0.9075151085853577,
+      "band": "high"
+    },
+    "openapi-fuzz-property-testing": {
+      "test_type": "openapi-fuzz-property-testing",
+      "definition": "Generates adversarial payloads from schema to force 500s",
+      "severity": "critical",
+      "needs_context": false,
+      "confidence": 0.7397135198116302,
+      "band": "medium"
+    },
+    "double-submit-idempotency": {
+      "test_type": "double-submit-idempotency",
+      "definition": "Fires identical concurrent requests to verify deduplication",
+      "severity": "critical",
+      "needs_context": true,
+      "confidence": 0.5274111032485962,
+      "band": "very_low"
+    },
+    "sigterm-inflight-completeness": {
+      "test_type": "sigterm-inflight-completeness",
+      "definition": "No requests or tasks lost when terminated mid-processing",
+      "severity": "critical",
+      "needs_context": true,
+      "confidence": 0.6846613883972168,
+      "band": "low"
+    },
+    "idor-access-control": {
+      "test_type": "idor-access-control",
+      "definition": "Other tenants' object IDs return 403 or 404",
+      "severity": "critical",
+      "needs_context": true,
+      "confidence": 0.8306159973144531,
+      "band": "medium"
+    },
+    "pydantic-invalid-input-rejection": {
+      "test_type": "pydantic-invalid-input-rejection",
+      "definition": "Confirms malformed payloads fail with actionable error details",
+      "severity": "critical",
+      "needs_context": false,
+      "confidence": 0.719440221786499,
+      "band": "medium"
+    },
+    "pip-install-clean": {
+      "test_type": "pip-install-clean",
+      "definition": "fresh pip install succeeds with no errors",
+      "severity": "critical",
+      "needs_context": false,
+      "confidence": 0.7527078539133072,
+      "band": "medium"
+    },
+    "pytest-asyncio-coroutine-tests": {
+      "test_type": "pytest-asyncio-coroutine-tests",
+      "definition": "Test async coroutines on managed event loops",
+      "severity": "critical",
+      "needs_context": true,
+      "confidence": 0.5539478659629822,
+      "band": "very_low"
+    },
+    "privilege-escalation-probes": {
+      "test_type": "privilege-escalation-probes",
+      "definition": "Role boundaries hold against parameter tampering attempts",
+      "severity": "critical",
+      "needs_context": true,
+      "confidence": 0.6119702458381653,
+      "band": "very_low"
+    },
+    "pytest-exception-path-coverage": {
+      "test_type": "pytest-exception-path-coverage",
+      "definition": "Verify raised exceptions and error types",
+      "severity": "high",
+      "needs_context": false,
+      "confidence": 0.9651847705245018,
+      "band": "high"
+    },
+    "asgi-endpoint-crud": {
+      "test_type": "asgi-endpoint-crud",
+      "definition": "Full CRUD round-trips against live ASGI app via transport",
+      "severity": "high",
+      "needs_context": true,
+      "confidence": 0.7328886389732361,
+      "band": "medium"
+    },
+    "pydantic-field-constraints": {
+      "test_type": "pydantic-field-constraints",
+      "definition": "Enforces type, bounds, and constraint rules on model fields",
+      "severity": "high",
+      "needs_context": false,
+      "confidence": 0.7984471768140793,
+      "band": "medium"
+    },
+    "pytest-boundary-conditions": {
+      "test_type": "pytest-boundary-conditions",
+      "definition": "Test min, max, empty, and off-by-one values",
+      "severity": "high",
+      "needs_context": false,
+      "confidence": 0.87994334846735,
+      "band": "high"
+    },
+    "async-cancellation-consistency": {
+      "test_type": "async-cancellation-consistency",
+      "definition": "Cancellation mid-await must leave shared state consistent",
+      "severity": "high",
+      "needs_context": true,
+      "confidence": 0.6979029774665833,
+      "band": "low"
+    },
+    "openapi-response-shape": {
+      "test_type": "openapi-response-shape",
+      "definition": "Asserts response bodies match declared schema, not just status",
+      "severity": "high",
+      "needs_context": false,
+      "confidence": 0.9150865450501442,
+      "band": "high"
+    },
+    "mypy-pydantic-plugin-check": {
+      "test_type": "mypy-pydantic-plugin-check",
+      "definition": "Validate model field types via the Pydantic plugin",
+      "severity": "high",
+      "needs_context": true,
+      "confidence": 0.529562771320343,
+      "band": "very_low"
+    },
+    "mass-assignment-probe": {
+      "test_type": "mass-assignment-probe",
+      "definition": "Extra or protected fields not writable via payloads",
+      "severity": "high",
+      "needs_context": false,
+      "confidence": 0.8215769380331039,
+      "band": "medium"
+    },
+    "hypothesis-invariant-postconditions": {
+      "test_type": "hypothesis-invariant-postconditions",
+      "definition": "Assert invariants hold for arbitrary inputs",
+      "severity": "high",
+      "needs_context": false,
+      "confidence": 0.8112999349832535,
+      "band": "medium"
+    },
+    "openapi-spec-drift": {
+      "test_type": "openapi-spec-drift",
+      "definition": "Diffs generated OpenAPI spec against committed published contract",
+      "severity": "high",
+      "needs_context": true,
+      "confidence": 0.9180484414100647,
+      "band": "high"
+    },
+    "dependency-conflict-detection": {
+      "test_type": "dependency-conflict-detection",
+      "definition": "resolver surfaces conflicting transitive requirements clearly",
+      "severity": "high",
+      "needs_context": true,
+      "confidence": 0.67802494764328,
+      "band": "low"
+    },
+    "hypothesis-edge-value-tour": {
+      "test_type": "hypothesis-edge-value-tour",
+      "definition": "Explore unicode, negatives, NaN, and empties",
+      "severity": "high",
+      "needs_context": false,
+      "confidence": 0.9374947771430016,
+      "band": "high"
+    },
+    "mypy-strict-annotation-coverage": {
+      "test_type": "mypy-strict-annotation-coverage",
+      "definition": "Verify type annotations across modules under strict mode",
+      "severity": "high",
+      "needs_context": true,
+      "confidence": 0.5763405561447144,
+      "band": "very_low"
+    },
+    "wheel-tag-correctness": {
+      "test_type": "wheel-tag-correctness",
+      "definition": "wheel tags match supported interpreters and ABIs",
+      "severity": "high",
+      "needs_context": true,
+      "confidence": 0.7463710308074951,
+      "band": "medium"
+    },
+    "e2e-idempotent-replay": {
+      "test_type": "e2e-idempotent-replay",
+      "definition": "Repeats workflow to confirm no duplicate side effects",
+      "severity": "high",
+      "needs_context": false,
+      "confidence": 0.8155999481678009,
+      "band": "medium"
+    },
+    "pip-check-consistency": {
+      "test_type": "pip-check-consistency",
+      "definition": "installed metadata satisfies all declared requirements",
+      "severity": "high",
+      "needs_context": true,
+      "confidence": 0.5305505394935608,
+      "band": "very_low"
+    },
+    "race-regression-freeze": {
+      "test_type": "race-regression-freeze",
+      "definition": "Freezes reproduced interleaving as a named regression case",
+      "severity": "high",
+      "needs_context": true,
+      "confidence": 0.5373622179031372,
+      "band": "very_low"
+    },
+    "mock-spec-autospeccing-safety": {
+      "test_type": "mock-spec-autospeccing-safety",
+      "definition": "Use specced mocks tracking real signatures",
+      "severity": "high",
+      "needs_context": false,
+      "confidence": 0.8145454376935959,
+      "band": "medium"
+    },
+    "mock-side-effect-exceptions": {
+      "test_type": "mock-side-effect-exceptions",
+      "definition": "Simulate dependency failures via side effects",
+      "severity": "medium",
+      "needs_context": false,
+      "confidence": 0.6131822764873505,
+      "band": "very_low"
+    },
+    "postgres-fixture-isolation": {
+      "test_type": "postgres-fixture-isolation",
+      "definition": "Provisions template-database fixtures with per-test rollback isolation",
+      "severity": "medium",
+      "needs_context": true,
+      "confidence": 0.7548994421958923,
+      "band": "medium"
+    },
+    "read-write-lock-fairness": {
+      "test_type": "read-write-lock-fairness",
+      "definition": "Checks writer starvation and fairness under mixed load",
+      "severity": "medium",
+      "needs_context": true,
+      "confidence": 0.6478108167648315,
+      "band": "very_low"
+    },
+    "malicious-package-screening": {
+      "test_type": "malicious-package-screening",
+      "definition": "Screen typosquat and suspicious packages before adoption",
+      "severity": "medium",
+      "needs_context": true,
+      "confidence": 0.5279378294944763,
+      "band": "very_low"
+    },
+    "ruff-lint-rule-suite": {
+      "test_type": "ruff-lint-rule-suite",
+      "definition": "Run curated ruff rule set on changed files",
+      "severity": "medium",
+      "needs_context": false,
+      "confidence": 0.733963280916214,
+      "band": "medium"
+    },
+    "pytest-warning-strict-filters": {
+      "test_type": "pytest-warning-strict-filters",
+      "definition": "Turn warnings into errors catching deprecations",
+      "severity": "medium",
+      "needs_context": true,
+      "confidence": 0.7302021384239197,
+      "band": "medium"
+    },
+    "unittest-pure-logic-no-doubles": {
+      "test_type": "unittest-pure-logic-no-doubles",
+      "definition": "Test deterministic logic without test doubles",
+      "severity": "medium",
+      "needs_context": false,
+      "confidence": 0.8293898850679398,
+      "band": "medium"
+    },
+    "hypothesis-schema-model-generation": {
+      "test_type": "hypothesis-schema-model-generation",
+      "definition": "Generate schema-bound models and payloads",
+      "severity": "medium",
+      "needs_context": false,
+      "confidence": 0.8682463765144348,
+      "band": "high"
+    },
+    "openapi-parameter-validation": {
+      "test_type": "openapi-parameter-validation",
+      "definition": "Checks query, header, path parameters honor schema constraints",
+      "severity": "medium",
+      "needs_context": false,
+      "confidence": 0.7261525988578796,
+      "band": "medium"
+    },
+    "pytest-fixture-scoped-setup": {
+      "test_type": "pytest-fixture-scoped-setup",
+      "definition": "Build reusable, well-scoped fixtures per concern",
+      "severity": "medium",
+      "needs_context": false,
+      "confidence": 0.7093953788280487,
+      "band": "medium"
+    },
+    "sbom-generation-audit": {
+      "test_type": "sbom-generation-audit",
+      "definition": "SBOM emitted; licenses checked against allowlist",
+      "severity": "medium",
+      "needs_context": true,
+      "confidence": 0.9049788117408752,
+      "band": "high"
+    },
+    "dependency-tree-audit": {
+      "test_type": "dependency-tree-audit",
+      "definition": "transitive dependency tree matches declared expectations",
+      "severity": "medium",
+      "needs_context": true,
+      "confidence": 0.8301954865455627,
+      "band": "medium"
+    },
+    "mypy-stub-completeness-sync": {
+      "test_type": "mypy-stub-completeness-sync",
+      "definition": "Check third-party stub presence and version alignment",
+      "severity": "medium",
+      "needs_context": true,
+      "confidence": 0.6883912682533264,
+      "band": "low"
+    },
+    "mock-call-contract-assertions": {
+      "test_type": "mock-call-contract-assertions",
+      "definition": "Assert call args, order, and counts",
+      "severity": "medium",
+      "needs_context": true,
+      "confidence": 0.547930896282196,
+      "band": "very_low"
+    },
+    "pytest-parametrized-equivalence-classes": {
+      "test_type": "pytest-parametrized-equivalence-classes",
+      "definition": "Parametrize equivalent input classes compactly",
+      "severity": "medium",
+      "needs_context": false,
+      "confidence": 0.8233896940946579,
+      "band": "medium"
+    },
+    "hypothesis-composite-strategies": {
+      "test_type": "hypothesis-composite-strategies",
+      "definition": "Build reusable strategies for domain types",
+      "severity": "low",
+      "needs_context": false,
+      "confidence": 0.8368882238864899,
+      "band": "medium"
+    }
+  }
+}

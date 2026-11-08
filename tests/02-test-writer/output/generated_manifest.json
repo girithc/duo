@@ -1,0 +1,19 @@
+{
+  "source_curated": "test-real.py_curated.json",
+  "generated": 1,
+  "failed": 1,
+  "manifest": {
+    "pytest-idempotency-repeat-check": {
+      "file": "generated_tests/pytest-idempotency-repeat-check.py",
+      "status": "error",
+      "error": "GeminiError: 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
+    },
+    "pytest-regression-bug-repro": {
+      "file": "generated_tests/pytest-regression-bug-repro.py",
+      "status": "ok",
+      "assumptions": [
+        "dynamic miniters restarts at <= 1 or initial value"
+      ]
+    }
+  }
+}

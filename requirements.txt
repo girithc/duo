@@ -1,0 +1,4 @@
+# Pipeline + API dependencies (install into the interpreter that runs the stages)
+redis>=5.0
+fastapi>=0.110
+uvicorn>=0.29

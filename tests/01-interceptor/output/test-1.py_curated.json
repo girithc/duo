@@ -1,0 +1,480 @@
+{
+  "test": "test-1.py",
+  "selected_families": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    10,
+    11,
+    13
+  ],
+  "pass2_batches": 3,
+  "input_tokens": 22300,
+  "curated_test_types": [
+    {
+      "family_id": 6,
+      "family": "Integration & Ephemeral Infrastructure Testing",
+      "leaf_id": "transaction-rollback-semantics",
+      "definition": "Verifies commit and rollback boundaries under nested transactions",
+      "severity": "critical",
+      "tool": "testcontainers",
+      "confidence": 0.9999656677246094,
+      "band": "high"
+    },
+    {
+      "family_id": 8,
+      "family": "Concurrency, Race & Free-Threading Stress Testing",
+      "leaf_id": "compound-update-atomicity",
+      "definition": "Multi-step shared-state updates commit fully or not at all",
+      "severity": "critical",
+      "tool": "frontrun",
+      "confidence": 0.9999229907989502,
+      "band": "high"
+    },
+    {
+      "family_id": 2,
+      "family": "Isolated Unit & Functional Logic Testing",
+      "leaf_id": "pytest-happy-path-assertions",
+      "definition": "Assert expected outputs for canonical valid inputs",
+      "severity": "critical",
+      "tool": "pytest",
+      "confidence": 0.9998505115509033,
+      "band": "high"
+    },
+    {
+      "family_id": 11,
+      "family": "Security, Supply Chain & Adversarial Testing",
+      "leaf_id": "auth-bypass-red-team",
+      "definition": "Every route enforces identity; no unauthenticated access",
+      "severity": "critical",
+      "tool": "wapiti3",
+      "confidence": 0.9997764229774475,
+      "band": "high"
+    },
+    {
+      "family_id": 5,
+      "family": "Contract, Schema & Wire-Serialization Testing",
+      "leaf_id": "openapi-fuzz-property-testing",
+      "definition": "Generates adversarial payloads from schema to force 500s",
+      "severity": "critical",
+      "tool": "schemathesis",
+      "confidence": 0.9971068501472473,
+      "band": "high"
+    },
+    {
+      "family_id": 8,
+      "family": "Concurrency, Race & Free-Threading Stress Testing",
+      "leaf_id": "double-submit-idempotency",
+      "definition": "Fires identical concurrent requests to verify deduplication",
+      "severity": "critical",
+      "tool": "frontrun",
+      "confidence": 0.9961051940917969,
+      "band": "high"
+    },
+    {
+      "family_id": 10,
+      "family": "Chaos Engineering & Resilience Fault Injection",
+      "leaf_id": "sigterm-inflight-completeness",
+      "definition": "No requests or tasks lost when terminated mid-processing",
+      "severity": "critical",
+      "tool": "pytest-xprocess",
+      "confidence": 0.991412878036499,
+      "band": "high"
+    },
+    {
+      "family_id": 11,
+      "family": "Security, Supply Chain & Adversarial Testing",
+      "leaf_id": "idor-access-control",
+      "definition": "Other tenants' object IDs return 403 or 404",
+      "severity": "critical",
+      "tool": "wapiti3",
+      "confidence": 0.9667843580245972,
+      "band": "high"
+    },
+    {
+      "family_id": 5,
+      "family": "Contract, Schema & Wire-Serialization Testing",
+      "leaf_id": "pydantic-invalid-input-rejection",
+      "definition": "Confirms malformed payloads fail with actionable error details",
+      "severity": "critical",
+      "tool": "pydantic",
+      "confidence": 0.9558160901069641,
+      "band": "high"
+    },
+    {
+      "family_id": 13,
+      "family": "Packaging, Distribution & Environment Testing",
+      "leaf_id": "pip-install-clean",
+      "definition": "fresh pip install succeeds with no errors",
+      "severity": "critical",
+      "tool": "pip",
+      "confidence": 0.9541056156158447,
+      "band": "high"
+    },
+    {
+      "family_id": 2,
+      "family": "Isolated Unit & Functional Logic Testing",
+      "leaf_id": "pytest-asyncio-coroutine-tests",
+      "definition": "Test async coroutines on managed event loops",
+      "severity": "critical",
+      "tool": "pytest-asyncio",
+      "confidence": 0.8245940804481506,
+      "band": "medium"
+    },
+    {
+      "family_id": 11,
+      "family": "Security, Supply Chain & Adversarial Testing",
+      "leaf_id": "privilege-escalation-probes",
+      "definition": "Role boundaries hold against parameter tampering attempts",
+      "severity": "critical",
+      "tool": "wapiti3",
+      "confidence": 0.5041888952255249,
+      "band": "very_low"
+    },
+    {
+      "family_id": 2,
+      "family": "Isolated Unit & Functional Logic Testing",
+      "leaf_id": "pytest-exception-path-coverage",
+      "definition": "Verify raised exceptions and error types",
+      "severity": "high",
+      "tool": "pytest",
+      "confidence": 0.9999659061431885,
+      "band": "high"
+    },
+    {
+      "family_id": 7,
+      "family": "API, End-to-End (E2E), Acceptance (BDD) & UI Testing",
+      "leaf_id": "asgi-endpoint-crud",
+      "definition": "Full CRUD round-trips against live ASGI app via transport",
+      "severity": "high",
+      "tool": "httpx",
+      "confidence": 0.999953031539917,
+      "band": "high"
+    },
+    {
+      "family_id": 5,
+      "family": "Contract, Schema & Wire-Serialization Testing",
+      "leaf_id": "pydantic-field-constraints",
+      "definition": "Enforces type, bounds, and constraint rules on model fields",
+      "severity": "high",
+      "tool": "pydantic",
+      "confidence": 0.9994117021560669,
+      "band": "high"
+    },
+    {
+      "family_id": 2,
+      "family": "Isolated Unit & Functional Logic Testing",
+      "leaf_id": "pytest-boundary-conditions",
+      "definition": "Test min, max, empty, and off-by-one values",
+      "severity": "high",
+      "tool": "pytest",
+      "confidence": 0.9976146221160889,
+      "band": "high"
+    },
+    {
+      "family_id": 8,
+      "family": "Concurrency, Race & Free-Threading Stress Testing",
+      "leaf_id": "async-cancellation-consistency",
+      "definition": "Cancellation mid-await must leave shared state consistent",
+      "severity": "high",
+      "tool": "frontrun",
+      "confidence": 0.996758759021759,
+      "band": "high"
+    },
+    {
+      "family_id": 5,
+      "family": "Contract, Schema & Wire-Serialization Testing",
+      "leaf_id": "openapi-response-shape",
+      "definition": "Asserts response bodies match declared schema, not just status",
+      "severity": "high",
+      "tool": "schemathesis",
+      "confidence": 0.9948235750198364,
+      "band": "high"
+    },
+    {
+      "family_id": 1,
+      "family": "Static, Type & Architectural Verification",
+      "leaf_id": "mypy-pydantic-plugin-check",
+      "definition": "Validate model field types via the Pydantic plugin",
+      "severity": "high",
+      "tool": "mypy",
+      "confidence": 0.9925525188446045,
+      "band": "high"
+    },
+    {
+      "family_id": 11,
+      "family": "Security, Supply Chain & Adversarial Testing",
+      "leaf_id": "mass-assignment-probe",
+      "definition": "Extra or protected fields not writable via payloads",
+      "severity": "high",
+      "tool": "hypothesis",
+      "confidence": 0.9902241826057434,
+      "band": "high"
+    },
+    {
+      "family_id": 4,
+      "family": "Property-Based, Fuzzing & Symbolic Verification",
+      "leaf_id": "hypothesis-invariant-postconditions",
+      "definition": "Assert invariants hold for arbitrary inputs",
+      "severity": "high",
+      "tool": "hypothesis",
+      "confidence": 0.9778817296028137,
+      "band": "high"
+    },
+    {
+      "family_id": 5,
+      "family": "Contract, Schema & Wire-Serialization Testing",
+      "leaf_id": "openapi-spec-drift",
+      "definition": "Diffs generated OpenAPI spec against committed published contract",
+      "severity": "high",
+      "tool": "schemathesis",
+      "confidence": 0.9526153802871704,
+      "band": "high"
+    },
+    {
+      "family_id": 13,
+      "family": "Packaging, Distribution & Environment Testing",
+      "leaf_id": "dependency-conflict-detection",
+      "definition": "resolver surfaces conflicting transitive requirements clearly",
+      "severity": "high",
+      "tool": "pip",
+      "confidence": 0.9099291563034058,
+      "band": "high"
+    },
+    {
+      "family_id": 4,
+      "family": "Property-Based, Fuzzing & Symbolic Verification",
+      "leaf_id": "hypothesis-edge-value-tour",
+      "definition": "Explore unicode, negatives, NaN, and empties",
+      "severity": "high",
+      "tool": "hypothesis",
+      "confidence": 0.8922240138053894,
+      "band": "high"
+    },
+    {
+      "family_id": 1,
+      "family": "Static, Type & Architectural Verification",
+      "leaf_id": "mypy-strict-annotation-coverage",
+      "definition": "Verify type annotations across modules under strict mode",
+      "severity": "high",
+      "tool": "mypy",
+      "confidence": 0.8273739814758301,
+      "band": "medium"
+    },
+    {
+      "family_id": 13,
+      "family": "Packaging, Distribution & Environment Testing",
+      "leaf_id": "wheel-tag-correctness",
+      "definition": "wheel tags match supported interpreters and ABIs",
+      "severity": "high",
+      "tool": "build",
+      "confidence": 0.8227154016494751,
+      "band": "medium"
+    },
+    {
+      "family_id": 7,
+      "family": "API, End-to-End (E2E), Acceptance (BDD) & UI Testing",
+      "leaf_id": "e2e-idempotent-replay",
+      "definition": "Repeats workflow to confirm no duplicate side effects",
+      "severity": "high",
+      "tool": "httpx",
+      "confidence": 0.777612566947937,
+      "band": "medium"
+    },
+    {
+      "family_id": 13,
+      "family": "Packaging, Distribution & Environment Testing",
+      "leaf_id": "pip-check-consistency",
+      "definition": "installed metadata satisfies all declared requirements",
+      "severity": "high",
+      "tool": "pip check",
+      "confidence": 0.591021716594696,
+      "band": "very_low"
+    },
+    {
+      "family_id": 8,
+      "family": "Concurrency, Race & Free-Threading Stress Testing",
+      "leaf_id": "race-regression-freeze",
+      "definition": "Freezes reproduced interleaving as a named regression case",
+      "severity": "high",
+      "tool": "frontrun",
+      "confidence": 0.5643845796585083,
+      "band": "very_low"
+    },
+    {
+      "family_id": 3,
+      "family": "Test-Double & State-Isolation Testing",
+      "leaf_id": "mock-spec-autospeccing-safety",
+      "definition": "Use specced mocks tracking real signatures",
+      "severity": "high",
+      "tool": "unittest.mock",
+      "confidence": 0.5251421928405762,
+      "band": "very_low"
+    },
+    {
+      "family_id": 3,
+      "family": "Test-Double & State-Isolation Testing",
+      "leaf_id": "mock-side-effect-exceptions",
+      "definition": "Simulate dependency failures via side effects",
+      "severity": "medium",
+      "tool": "unittest.mock",
+      "confidence": 0.982117235660553,
+      "band": "high"
+    },
+    {
+      "family_id": 6,
+      "family": "Integration & Ephemeral Infrastructure Testing",
+      "leaf_id": "postgres-fixture-isolation",
+      "definition": "Provisions template-database fixtures with per-test rollback isolation",
+      "severity": "medium",
+      "tool": "pytest-postgresql",
+      "confidence": 0.9515566229820251,
+      "band": "high"
+    },
+    {
+      "family_id": 8,
+      "family": "Concurrency, Race & Free-Threading Stress Testing",
+      "leaf_id": "read-write-lock-fairness",
+      "definition": "Checks writer starvation and fairness under mixed load",
+      "severity": "medium",
+      "tool": "pytest-run-parallel",
+      "confidence": 0.8914936780929565,
+      "band": "high"
+    },
+    {
+      "family_id": 11,
+      "family": "Security, Supply Chain & Adversarial Testing",
+      "leaf_id": "malicious-package-screening",
+      "definition": "Screen typosquat and suspicious packages before adoption",
+      "severity": "medium",
+      "tool": "pip-audit",
+      "confidence": 0.8592074513435364,
+      "band": "high"
+    },
+    {
+      "family_id": 1,
+      "family": "Static, Type & Architectural Verification",
+      "leaf_id": "ruff-lint-rule-suite",
+      "definition": "Run curated ruff rule set on changed files",
+      "severity": "medium",
+      "tool": "ruff",
+      "confidence": 0.8384668827056885,
+      "band": "medium"
+    },
+    {
+      "family_id": 2,
+      "family": "Isolated Unit & Functional Logic Testing",
+      "leaf_id": "pytest-warning-strict-filters",
+      "definition": "Turn warnings into errors catching deprecations",
+      "severity": "medium",
+      "tool": "pytest",
+      "confidence": 0.8163691759109497,
+      "band": "medium"
+    },
+    {
+      "family_id": 2,
+      "family": "Isolated Unit & Functional Logic Testing",
+      "leaf_id": "unittest-pure-logic-no-doubles",
+      "definition": "Test deterministic logic without test doubles",
+      "severity": "medium",
+      "tool": "unittest",
+      "confidence": 0.7823117971420288,
+      "band": "medium"
+    },
+    {
+      "family_id": 4,
+      "family": "Property-Based, Fuzzing & Symbolic Verification",
+      "leaf_id": "hypothesis-schema-model-generation",
+      "definition": "Generate schema-bound models and payloads",
+      "severity": "medium",
+      "tool": "hypothesis",
+      "confidence": 0.7456518411636353,
+      "band": "medium"
+    },
+    {
+      "family_id": 5,
+      "family": "Contract, Schema & Wire-Serialization Testing",
+      "leaf_id": "openapi-parameter-validation",
+      "definition": "Checks query, header, path parameters honor schema constraints",
+      "severity": "medium",
+      "tool": "schemathesis",
+      "confidence": 0.7236934900283813,
+      "band": "medium"
+    },
+    {
+      "family_id": 2,
+      "family": "Isolated Unit & Functional Logic Testing",
+      "leaf_id": "pytest-fixture-scoped-setup",
+      "definition": "Build reusable, well-scoped fixtures per concern",
+      "severity": "medium",
+      "tool": "pytest",
+      "confidence": 0.6961566209793091,
+      "band": "low"
+    },
+    {
+      "family_id": 11,
+      "family": "Security, Supply Chain & Adversarial Testing",
+      "leaf_id": "sbom-generation-audit",
+      "definition": "SBOM emitted; licenses checked against allowlist",
+      "severity": "medium",
+      "tool": "trivy",
+      "confidence": 0.6885015368461609,
+      "band": "low"
+    },
+    {
+      "family_id": 13,
+      "family": "Packaging, Distribution & Environment Testing",
+      "leaf_id": "dependency-tree-audit",
+      "definition": "transitive dependency tree matches declared expectations",
+      "severity": "medium",
+      "tool": "pipdeptree",
+      "confidence": 0.6849777102470398,
+      "band": "low"
+    },
+    {
+      "family_id": 1,
+      "family": "Static, Type & Architectural Verification",
+      "leaf_id": "mypy-stub-completeness-sync",
+      "definition": "Check third-party stub presence and version alignment",
+      "severity": "medium",
+      "tool": "mypy",
+      "confidence": 0.6730653643608093,
+      "band": "low"
+    },
+    {
+      "family_id": 3,
+      "family": "Test-Double & State-Isolation Testing",
+      "leaf_id": "mock-call-contract-assertions",
+      "definition": "Assert call args, order, and counts",
+      "severity": "medium",
+      "tool": "unittest.mock",
+      "confidence": 0.6558952331542969,
+      "band": "low"
+    },
+    {
+      "family_id": 2,
+      "family": "Isolated Unit & Functional Logic Testing",
+      "leaf_id": "pytest-parametrized-equivalence-classes",
+      "definition": "Parametrize equivalent input classes compactly",
+      "severity": "medium",
+      "tool": "pytest",
+      "confidence": 0.5233741998672485,
+      "band": "very_low"
+    },
+    {
+      "family_id": 4,
+      "family": "Property-Based, Fuzzing & Symbolic Verification",
+      "leaf_id": "hypothesis-composite-strategies",
+      "definition": "Build reusable strategies for domain types",
+      "severity": "low",
+      "tool": "hypothesis",
+      "confidence": 0.8300826549530029,
+      "band": "medium"
+    }
+  ]
+}

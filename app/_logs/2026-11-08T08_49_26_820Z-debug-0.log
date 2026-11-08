@@ -1,0 +1,17 @@
+0 verbose cli /opt/homebrew/Cellar/node/25.9.0_3/bin/node /opt/homebrew/bin/npm
+1 info using npm@11.12.1
+2 info using node@v25.9.0
+3 silly config load:file:/opt/homebrew/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/girithchoudhary/.npmrc
+5 silly config load:file:/opt/homebrew/etc/npmrc
+6 verbose title npm ./connection ./engine ./requirements.txt ./rule.md ./run ./tests
+7 verbose argv "--cache" "./app" "./connection" "./engine" "./requirements.txt" "./rule.md" "./run" "./tests"
+8 verbose logfile logs-max:10 dir:/Users/girithchoudhary/Documents/duo/app/_logs/2026-11-08T08_49_26_820Z-
+9 verbose logfile /Users/girithchoudhary/Documents/duo/app/_logs/2026-11-08T08_49_26_820Z-debug-0.log
+10 silly logfile done cleaning log files
+11 verbose cwd /Users/girithchoudhary/Documents/duo
+12 verbose os Darwin 25.5.0
+13 verbose node v25.9.0
+14 verbose npm  v11.12.1
+15 verbose exit 1
+16 verbose code 1

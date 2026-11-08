@@ -1,0 +1,42 @@
+# SubQ Decision Model — Input Contract
+
+> The ONLY payload SubQ receives. No function bodies, no implementation logic.
+
+## 1. Ticket (primary — intent + edge cases)
+
+```
+Issue #42: Add money transfer between accounts
+
+Users must be able to transfer an amount from one account to another.
+- Transfer must be atomic: both accounts update or neither does.
+- Reject transfers with insufficient balance.
+- Amount must be positive.
+
+Acceptance criteria:
+- POST endpoint accepts from_account, to_account, amount
+- Returns new balances on success
+```
+
+## 2. Signatures skeleton (surface shape, bodies stripped)
+
+```python
+# POST /api/transfer  {from_account, to_account, amount} -> {status, balances}
+def transfer(from_account: str, to_account: str, amount: Decimal) -> TransferResult: ...
+def get_balance(account_id: str) -> Decimal: ...
+
+class InsufficientFundsError(Exception): ...
+class InvalidAmountError(Exception): ...
+
+class TransferResult:  # schema only
+    status: str
+    balances: dict[str, Decimal]
+```
+
+## 3. File manifest (paths + change types)
+
+```
+A  src/api/routes_transfer.py      (new endpoint)
+M  src/services/accounts.py        (modified service)
+A  src/models/transfer_result.py   (new schema)
+M  requirements.txt                (+1 dependency)
+```
